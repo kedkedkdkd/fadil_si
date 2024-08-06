@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Transaksi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .result-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #555;
+        }
+        strong {
+            color: #333;
+        }
+        .result-container p {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .result-container p:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Detail Transaksi</h1>
+        <p><strong>Nama:</strong> <span id="result-nama"></span></p>
+        <p><strong>Alamat:</strong> <span id="result-alamat"></span></p>
+        <p><strong>Produk:</strong> <span id="result-produk"></span></p>
+        <p><strong>Jumlah:</strong> <span id="result-jumlah"></span></p>
+        <p><strong>Total:</strong> <span id="result-total"></span></p>
+    </div>
+
+    <script>
+        // Retrieve data from sessionStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            var nama = sessionStorage.getItem('nama');
+            var alamat = sessionStorage.getItem('alamat');
+            var produk = sessionStorage.getItem('produk');
+            var jumlah = sessionStorage.getItem('jumlah');
+            var total = sessionStorage.getItem('total');
+
+            // Display the data
+            document.getElementById('result-nama').textContent = nama;
+            document.getElementById('result-alamat').textContent = alamat;
+            document.getElementById('result-produk').textContent = produk;
+            document.getElementById('result-jumlah').textContent = jumlah;
+            document.getElementById('result-total').textContent = total;
+        });
+    </script>
+</body>
+</html>

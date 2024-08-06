@@ -1,0 +1,62 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi Penjualan</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header, .footer { background: #333; color: white; text-align: center; padding: 10px 0; }
+        .menu { background: #f4f4f4; padding: 10px; text-align: center; }
+        .menu a { margin: 0 10px; text-decoration: none; color: #333; }
+        .form-container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Transaksi Penjualan</h1>
+    </div>
+    <div class="menu">
+        <a href="index.html">Produk</a>
+        <a href="transaksi.html">Transaksi</a>
+        <a href="tentang.html">Tentang Kami</a>
+    </div>
+    <div class="form-container">
+        <form id="transaksiForm">
+            <label for="nama">Nama:</label><br>
+            <input type="text" id="nama" name="nama"><br><br>
+            <label for="alamat">Alamat:</label><br>
+            <input type="text" id="alamat" name="alamat"><br><br>
+            <label for="produk">Produk:</label><br>
+            <input type="text" id="produk" name="produk" style="width: 300px;" value="Sarung Wadimor Corak Batik Edition" readonly><br><br>
+            <label for="jumlah">Jumlah:</label><br>
+            <input type="number" id="jumlah" name="jumlah"><br><br>
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Toko Kami</p>
+    </div>
+</body>
+<script>
+    // JavaScript to handle form submission
+    document.getElementById('transaksiForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Capture input data
+        var nama = document.getElementById('nama').value;
+        var alamat = document.getElementById('alamat').value;
+        var produk = document.getElementById('produk').value;
+        var jumlah = document.getElementById('jumlah').value;
+        var total = 200000*jumlah
+        // Store the data in sessionStorage
+        sessionStorage.setItem('nama', nama);
+        sessionStorage.setItem('alamat', alamat);
+        sessionStorage.setItem('produk', produk);
+        sessionStorage.setItem('jumlah', jumlah);
+        sessionStorage.setItem('total', total);
+        // Redirect to invoice.html
+        window.location.href = 'invoice1.html';
+    });
+</script>
+</html>
